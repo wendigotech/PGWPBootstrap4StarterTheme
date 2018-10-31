@@ -127,6 +127,9 @@ ul,
 dl {
     margin-top: 0;
     margin-bottom: 1rem;
+    font-family: Anaheim;
+    font-size: 1em;
+    color: #ffffff;
 }
 
 ol ol,
@@ -392,7 +395,7 @@ h6,
 .h5,
 .h6 {
     margin-bottom: 0.5rem;
-    font-family: inherit;
+    font-family: Roboto;
     font-weight: 500;
     line-height: 1.2;
     color: inherit;
@@ -9185,7 +9188,7 @@ button.close {
     margin-left: 3px;
     text-indent: -999px;
     cursor: pointer;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: #4fcce8;
 }
 
 .carousel-indicators li::before {
@@ -13156,4 +13159,203 @@ h1.navbar-brand > a {
 .btn,
 .wpcf7 input[type=submit] {
     white-space: normal;
+}
+
+.lead {
+    font-size: 1vw;
+    font-weight: 900;
+    word-break: keep-all;
+}
+
+.nav-link {
+    margin-right: 5px;
+    margin-left: 5px;
+    color: #fdf4f4;
+    font-family: Anaheim;
+    font-weight: 600;
+}
+
+.carousel-indicators {
+    position: absolute;
+    right: 0;
+    bottom: 10px;
+    left: 0;
+    z-index: 15;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    padding-left: 0;
+    margin-right: 15%;
+    margin-left: 15%;
+    list-style: none;
+    -webkit-transform: scale(2);
+    -ms-transform: scale(2);
+    transform: scale(2);
+}
+
+.carousel-indicators li {
+    position: relative;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    width: 30px;
+    height: 3px;
+    margin-right: 3px;
+    margin-left: 3px;
+    text-indent: -999px;
+    cursor: pointer;
+    background-color: #4fcce8;
+}
+
+.carousel-indicators li::before {
+    position: absolute;
+    top: -10px;
+    left: 0;
+    display: inline-block;
+    width: 100%;
+    height: 10px;
+    content: "";
+}
+
+.carousel-indicators li::after {
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    display: inline-block;
+    width: 100%;
+    height: 10px;
+    content: "";
+}
+
+.carousel-indicators .active {
+    background-color: #fff;
+}
+
+h1,
+.h1 {
+    font-family: Roboto;
+    color: #ffffff;
+    font-weight: 500;
+}
+
+h2,
+.h2 {
+    font-size: 2rem;
+    font-family: Roboto;
+    font-weight: 500;
+}
+
+h3,
+.h3 {
+    font-family: Roboto;
+    font-weight: 500;
+    font-size: 25px;
+}
+
+h4,
+.h4 {
+    font-size: 1.5rem;
+    font-family: Roboto;
+    font-weight: 500;
+    color: #ffffff;
+}
+
+h5,
+.h5 {
+    font-size: 1.25rem;
+    font-family: Roboto;
+    font-weight: 500;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-family: Roboto;
+    word-break: keep-all;
+    font-size: 2vw;
+    color: #ffffff;
+    font-weight: 300;
+}
+
+.page-link {
+    position: relative;
+    display: block;
+    padding: 0.5rem 0.75rem;
+    margin-left: -1px;
+    line-height: 1.25;
+    color: #2997D4;
+    border: 1px solid #dee2e6;
+    background: -webkit-repeating-radial-gradient(right center, #acb6e5 0%, #86fde8 100%);
+}
+
+.page-link:hover {
+    z-index: 2;
+    color: #1d6994;
+    text-decoration: none;
+    background-color: #e9ecef;
+    border-color: #dee2e6;
+}
+
+.page-link:focus {
+    z-index: 2;
+    outline: 0;
+    -webkit-box-shadow: 0 0 0 0.2rem rgba(41, 151, 212, 0.25);
+    box-shadow: 0 0 0 0.2rem rgba(41, 151, 212, 0.25);
+}
+
+.page-link:not(:disabled):not(.disabled) {
+    cursor: pointer;
+}
+
+a {
+    color: #ace6f2;
+    text-decoration: none;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+    font-family: abel;
+}
+
+a:hover {
+    color: #1d6994;
+    text-decoration: underline;
+}
+
+.nav-tabs {
+    border-bottom-color: rgba(161, 7, 7, 0);
+    -webkit-transition: all 2s ease;
+    -o-transition: all 2s ease;
+    transition: all 2s ease;
+}
+
+.nav-tabs .nav-item {
+    margin-bottom: -1px;
+}
+
+.nav-tabs .nav-link {
+    border: 1px solid transparent;
+}
+
+.nav-tabs .nav-link:hover,
+.nav-tabs .nav-link:focus {
+    border-color: #e9ecef #e9ecef #dee2e6;
+}
+
+.nav-tabs .nav-link.disabled {
+    color: #6c757d;
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.nav-tabs .nav-link.active,
+.nav-tabs .nav-item.show .nav-link {
+    color: #495057;
+    background-color: #fff;
+    border-color: #dee2e6 #dee2e6 #fff;
+}
+
+.nav-tabs .dropdown-menu {
+    margin-top: -1px;
 }

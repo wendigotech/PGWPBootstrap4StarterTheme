@@ -44,3 +44,201 @@ h1.navbar-brand > a {
 .btn {
     white-space: normal;
 }
+
+.lead {
+    font-size: 1vw;
+    font-weight: 900;
+    word-break: keep-all;
+}
+
+.nav-link {
+    margin-right: 5px;
+    margin-left: 5px;
+    color: #fdf4f4;
+    font-family: Anaheim;
+    font-weight: 600;
+}
+
+.carousel-indicators {
+    position: absolute;
+    right: 0;
+    bottom: 10px;
+    left: 0;
+    z-index: 15;
+    display: flex;
+    justify-content: center;
+    padding-left: 0; // override <ol> default
+    // Use the .carousel-control's width as margin so we don't overlay those
+    margin-right: $carousel-control-width;
+    margin-left: $carousel-control-width;
+    list-style: none;
+
+    li {
+        position: relative;
+        flex: 0 1 auto;
+        width: $carousel-indicator-width;
+        height: $carousel-indicator-height;
+        margin-right: $carousel-indicator-spacer;
+        margin-left: $carousel-indicator-spacer;
+        text-indent: -999px;
+        cursor: pointer;
+        background-color: #4fcce8;
+
+        // Use pseudo classes to increase the hit area by 10px on top and bottom.
+        &::before {
+            position: absolute;
+            top: -10px;
+            left: 0;
+            display: inline-block;
+            width: 100%;
+            height: 10px;
+            content: "";
+        }
+
+        &::after {
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            display: inline-block;
+            width: 100%;
+            height: 10px;
+            content: "";
+        }
+    }
+
+    .active {
+        background-color: $carousel-indicator-active-bg;
+    }
+
+    transform: scale(2);
+}
+
+h1,
+.h1 {
+    font-family: Roboto;
+    color: #ffffff;
+    font-weight: 500;
+}
+
+h2,
+.h2 {
+    font-size: $h2-font-size;
+    font-family: Roboto;
+    font-weight: 500;
+}
+
+h3,
+.h3 {
+    font-family: Roboto;
+    font-weight: 500;
+    font-size: 25px;
+}
+
+h4,
+.h4 {
+    font-size: $h4-font-size;
+    font-family: Roboto;
+    font-weight: 500;
+    color: #ffffff;
+}
+
+h5,
+.h5 {
+    font-size: $h5-font-size;
+    font-family: Roboto;
+    font-weight: 500;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: $paragraph-margin-bottom;
+    font-family: Roboto;
+    word-break: keep-all;
+    font-size: 2vw;
+    color: #ffffff;
+    font-weight: 300;
+}
+
+.page-link {
+    position: relative;
+    display: block;
+    padding: $pagination-padding-y $pagination-padding-x;
+    margin-left: -$pagination-border-width;
+    line-height: $pagination-line-height;
+    color: $pagination-color;
+    border: $pagination-border-width solid $pagination-border-color;
+
+    &:hover {
+        z-index: 2;
+        color: $pagination-hover-color;
+        text-decoration: none;
+        background-color: $pagination-hover-bg;
+        border-color: $pagination-hover-border-color;
+    }
+
+    &:focus {
+        z-index: 2;
+        outline: $pagination-focus-outline;
+        box-shadow: $pagination-focus-box-shadow;
+    }
+
+    // Opinionated: add "hand" cursor to non-disabled .page-link elements
+    &:not(:disabled):not(.disabled) {
+        cursor: pointer;
+    }
+
+    background: -webkit-repeating-radial-gradient(right center, rgb(172, 182, 229) 0%, rgb(134, 253, 232) 100%);
+}
+
+a {
+    color: #ace6f2;
+    text-decoration: $link-decoration;
+    background-color: transparent; // Remove the gray background on active links in IE 10.
+    -webkit-text-decoration-skip: objects; // Remove gaps in links underline in iOS 8+ and Safari 8+.
+    @include hover {
+        color: $link-hover-color;
+        text-decoration: $link-hover-decoration;
+    }
+
+    font-family: abel;
+}
+
+.nav-tabs {
+    .nav-item {
+        margin-bottom: -$nav-tabs-border-width;
+    }
+
+    .nav-link {
+        border: $nav-tabs-border-width solid transparent;
+
+        @include border-top-radius($nav-tabs-border-radius);
+
+        @include hover-focus {
+            border-color: $nav-tabs-link-hover-border-color;
+        }
+
+        &.disabled {
+            color: $nav-link-disabled-color;
+            background-color: transparent;
+            border-color: transparent;
+        }
+    }
+
+    .nav-link.active,
+    .nav-item.show .nav-link {
+        color: $nav-tabs-link-active-color;
+        background-color: $nav-tabs-link-active-bg;
+        border-color: $nav-tabs-link-active-border-color;
+    }
+
+    .dropdown-menu {
+        // Make dropdown border overlap tab border
+        margin-top: -$nav-tabs-border-width;
+
+        // Remove the top rounded corners here since there is a hard edge above the menu
+        @include border-top-radius(0);
+    }
+
+    border-bottom-color: rgba(161, 7, 7, 0);
+    transition: all 2s ease;
+}

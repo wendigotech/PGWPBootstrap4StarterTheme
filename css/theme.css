@@ -26,3 +26,39 @@ figure,
 #page {
     word-wrap: break-word;
 }
+
+.entry-content {
+    font-family: Anaheim;
+    font-size: 1em;
+    color: #ffffff;
+}
+
+p {
+    margin-top: 0;
+    font-family: Roboto;
+    word-break: keep-all;
+    font-size: 1.2vw;
+    color: #ffffff;
+    font-weight: 300;
+}
+
+h2,
+.h2 {
+    font-size: 30px;
+    font-family: Roboto;
+    font-weight: 500;
+}
+
+h3,
+.h3 {
+    font-family: Roboto;
+    font-weight: 500;
+    font-size: 25px;
+}
+
+h1,
+.h1 {
+    font-family: Roboto;
+    color: #ffffff;
+    font-weight: 500;
+}

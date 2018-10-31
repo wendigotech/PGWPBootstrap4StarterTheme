@@ -1,15 +1,14 @@
 // Your Custom Theme & WordPress related CSS rules should come here //
 // Edit bootstrap_theme>custom.scss to add/modify custom rules which are "bootstrap related" //
-
 img.wp-post-image,
 article img,
 figure,
 #secondary img {
-margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 
 .wp-caption-text {
-margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 
 .widget-area aside {
@@ -30,3 +29,38 @@ margin-bottom: 10px;
     word-wrap: break-word;
 }
 
+.entry-content {
+    font-family: Anaheim;
+    font-size: 1em;
+    color: #ffffff;
+}
+
+p {
+    margin-top: 0;
+    font-family: Roboto;
+    word-break: keep-all;
+    font-size: 1.2vw;
+    color: #ffffff;
+    font-weight: 300;
+}
+
+h2,
+.h2 {
+    font-size: 30px;
+    font-family: Roboto;
+    font-weight: 500;
+}
+
+h3,
+.h3 {
+    font-family: Roboto;
+    font-weight: 500;
+    font-size: 25px;
+}
+
+h1,
+.h1 {
+    font-family: Roboto;
+    color: #ffffff;
+    font-weight: 500;
+}

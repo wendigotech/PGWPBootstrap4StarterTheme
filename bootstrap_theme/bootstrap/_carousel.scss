@@ -191,7 +191,7 @@
         margin-left: $carousel-indicator-spacer;
         text-indent: -999px;
         cursor: pointer;
-        background-color: rgba($carousel-indicator-active-bg, .5);
+        background-color: #4fcce8;
 
         // Use pseudo classes to increase the hit area by 10px on top and bottom.
         &::before {

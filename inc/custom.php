@@ -1,7 +1,7 @@
 <?php
 //* Pinegrow Starter Theme 2 Theme Tweaks
 
-//* Pro-tip: To personnalize your theme and ease further maintenance, always prefix your function names with the text domain (= theme slug in your Pinegrow theme settings, for example st2_FunctionName). 
+//* Pro-tip: To personnalize your theme and ease further maintenance, always prefix your function names with the text domain (= theme slug in your Pinegrow theme settings, for example st2_FunctionName).
 
 //* Making your custom Theme conform to the l18n process is done by doing a search on the (current) 'st2' string then replace it with your own text domain.
 //* Read more about internationalization https://codex.wordpress.org/I18n_for_WordPress_Developers
@@ -91,7 +91,7 @@ if (!function_exists('st2_slbd_count_widgets')) {
 				// If two widgets are published
 				$widget_classes .= ' col-md-2';
 			elseif ($widget_count >= 3) :
-				// Three widgets per row if there's three or more widgets 
+				// Three widgets per row if there's three or more widgets
 				$widget_classes .= ' col-md-4';
 			elseif (2 == $widget_count) :
 				// If two widgets are published
@@ -314,7 +314,7 @@ function pgwp_sanitize_placeholder($input)
 
 //* Remove 'Editor' from 'Appearance' Menu.
 //* This stops users and hackers from being able to edit files from within WordPress.
-define('DISALLOW_FILE_EDIT', true);
+define('DISALLOW_FILE_EDIT', false);
 
 
 //* Add the ability to use shortcodes in widgets
@@ -371,6 +371,59 @@ function st2_add_custom_types_to_tax($query)
 		$query->set('post_type', $post_types);
 		return $query;
 	}
+}
+
+/**
+ * Related posts
+ * 
+ * @global object $post
+ * @param array $args
+ * @return
+ */
+function wcr_related_posts($args = array()) {
+    global $post;
+
+    // default args
+    $args = wp_parse_args($args, array(
+        'post_id' => !empty($post) ? $post->ID : '',
+        'taxonomy' => 'category',
+        'limit' => 3,
+        'post_type' => !empty($post) ? $post->post_type : 'post',
+        'orderby' => 'date',
+        'order' => 'DESC'
+    ));
+
+    // check taxonomy
+    if (!taxonomy_exists($args['taxonomy'])) {
+        return;
+    }
+
+    // post taxonomies
+    $taxonomies = wp_get_post_terms($args['post_id'], $args['taxonomy'], array('fields' => 'ids'));
+
+    if (empty($taxonomies)) {
+        return;
+    }
+
+    // query
+    $related_posts = get_posts(array(
+        'post__not_in' => (array) $args['post_id'],
+        'post_type' => $args['post_type'],
+        'tax_query' => array(
+            array(
+                'taxonomy' => $args['taxonomy'],
+                'field' => 'term_id',
+                'terms' => $taxonomies
+            ),
+        ),
+        'posts_per_page' => $args['limit'],
+        'orderby' => $args['orderby'],
+        'order' => $args['order']
+    ));
+
+    include( locate_template('related-posts-template.php', false, false) );
+
+    wp_reset_postdata();
 }
 
 add_filter('pre_get_posts', 'st2_add_custom_types_to_tax');
@@ -443,6 +496,14 @@ function st2_failed_login()
 	return 'The login information you have entered is incorrect. Please try again.';
 
 }
+
+function add_file_types_to_uploads($file_types){
+$new_filetypes = array();
+$new_filetypes['svg'] = 'image/svg+xml';
+$file_types = array_merge($file_types, $new_filetypes );
+return $file_types;
+}
+add_action('upload_mimes', 'add_file_types_to_uploads');
 
 
 ?>

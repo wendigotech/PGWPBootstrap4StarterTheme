@@ -18,9 +18,6 @@
         <link href="css/woocommerce.css" rel="stylesheet" type="text/css"> 
         <link href="https://cdnjs.cloudflare.com/ajax/libs/imagehover.css/1.0/css/imagehover.min.css" rel="stylesheet" type="text/css">
         <link href="custom.css" rel="stylesheet" type="text/css">
-        <link href="https://fonts.googleapis.com/css?family=Anaheim" rel="stylesheet" type="text/css">
-        <link href="https://fonts.googleapis.com/css?family=Abhaya+Libre:400,500,600,700,800" rel="stylesheet" type="text/css">
-        <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet" type="text/css">
     </head>     
     <body> 
         <div class="hfeed site" id="page"> 
@@ -119,43 +116,49 @@
             </header>             
             <div wp-site-content> 
                 <div id="page-wrapper" class="wrapper"> 
-                    <div class="container" id="content" tabindex="-1"> 
-                        <div class="row"> 
-                            <div class="col-md-4 widget-area" wp-if-get-theme-mod="show_left_sidebar" role="complementary" id="left-sidebar" wp-hide> 
-                                <aside wp-dynamic-sidebar="left-sidebar" wp-dynamic-sidebar-set="element"></aside>                                 
-                                <h3 wp-no-export>Left Sidebar</h3> 
-                                <p wp-no-export>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p> 
-                            </div>                             
-                            <div class="content-area col-md-12" id="primary"> 
-                                <main class="site-main" id="main"> 
-                                    <div data-pg-name="content-page template"> 
-                                        <article class="" cms-post> 
-                                            <header class="entry-header"> 
-                                                <h1 cms-post-title class="text-center">Page Title</h1> 
-                                            </header>                                             
-                                            <div class="entry-content text-light" cms-post-content> 
-                                                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pulvinar faucibus neque, nec rhoncus nunc ultrices sit amet. Curabitur ac sagittis neque, vel egestas est. Aenean elementum, erat at aliquet hendrerit, elit nisl posuere tortor, id suscipit diam dui sed nisi. Morbi sollicitudin massa vel tortor consequat, eget semper nisl fringilla. Maecenas at hendrerit odio. Sed in mi eu quam suscipit bibendum quis at orci. Pellentesque fermentum nisl purus, et iaculis lectus pharetra sit amet.</p>
-                                                <ol> 
-                                                    <li>Lorem ipsum dolor sit amet</li>                                                     
-
-                                                    <li>Consectetur adipiscing elit</li>                                                     
-
-                                                    <li>Integer molestie lorem at massa</li>                                                     
-
-                                                    <li>Nulla volutpat aliquam velit                    
-                                                        <ul> 
-                                                            <li>Phasellus iaculis neque</li>                                                             
-
-                                                            <li>Purus sodales ultricies</li>                                                             
-                                                        </ul>                                                         
-                                                    </li>                                                     
-                                                </ol>                                                 
-                                            </div>                                             
-                                        </article>                                         
-                                    </div>                                     
-                                </main>                                 
-                            </div>                             
-                        </div>                         
+                    <div class="container" id="content" tabindex="-1" style="margin-top: 100px;"> 
+                        <div class="container grid-4">
+                            <figure class="imghvr-blur" style="grid-area:1 / 1 / 4 / 5;" wp-post-class wp-the-id wp-loop="Software" wp-loop-orderby="date" wp-loop-order="DESC" wp-loop-nopaging="true" wp-loop-category-name="software" wp-loop-show-items="1">
+                                <img src="https://images.unsplash.com/photo-1518127864129-8d0834d765bc?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&ixid=eyJhcHBfaWQiOjIwOTIyfQ&s=687274d645f07306fb95328c405048c5" cms-post-image="normal">
+                                <a href="" cms-post-link>Link
+                                    <figcaption class="d-flex flex-column justify-content-center align-items-center align-content-center">
+                                        <h3>Read full review</h3>
+                                    </figcaption>
+                                </a>
+                            </figure>
+                            <figure class="imghvr-blur" style="grid-area:1 / 5 / 4 / 8;" wp-post-class wp-the-id wp-loop="Software" wp-loop-orderby="date" wp-loop-order="DESC" wp-loop-nopaging="true" wp-loop-category-name="software" wp-loop-show-items="1" wp-loop-continue="true">
+                                <img src="https://images.unsplash.com/photo-1518127864129-8d0834d765bc?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&ixid=eyJhcHBfaWQiOjIwOTIyfQ&s=687274d645f07306fb95328c405048c5" cms-post-image="normal">
+                                <a href="" cms-post-link>Link
+                                    <figcaption class="d-flex flex-column justify-content-center align-items-center align-content-center">
+                                        <h3>Read full review</h3>
+                                    </figcaption>
+                                </a>
+                            </figure>
+                            <figure class="imghvr-blur" style="grid-area:4 / 6 / 8 / 8;" wp-post-class wp-the-id wp-loop="Software" wp-loop-orderby="date" wp-loop-order="DESC" wp-loop-nopaging="true" wp-loop-category-name="software" wp-loop-show-items="1" wp-loop-continue="true">
+                                <img src="https://images.unsplash.com/photo-1518127864129-8d0834d765bc?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&ixid=eyJhcHBfaWQiOjIwOTIyfQ&s=687274d645f07306fb95328c405048c5" cms-post-image="normal">
+                                <a href="" cms-post-link>Link
+                                    <figcaption class="d-flex flex-column justify-content-center align-items-center align-content-center">
+                                        <h3>Read full review</h3>
+                                    </figcaption>
+                                </a>
+                            </figure>
+                            <figure class="imghvr-blur" style="grid-area:4 / 1 / 8 / 4;" wp-post-class wp-the-id wp-loop="Software" wp-loop-orderby="date" wp-loop-order="DESC" wp-loop-nopaging="true" wp-loop-category-name="software" wp-loop-show-items="1" wp-loop-continue="true">
+                                <img src="https://images.unsplash.com/photo-1518127864129-8d0834d765bc?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&ixid=eyJhcHBfaWQiOjIwOTIyfQ&s=687274d645f07306fb95328c405048c5" cms-post-image="normal">
+                                <a href="" cms-post-link>Link
+                                    <figcaption class="d-flex flex-column justify-content-center align-items-center align-content-center">
+                                        <h3>Read full review</h3>
+                                    </figcaption>
+                                </a>
+                            </figure>
+                            <figure class="imghvr-blur" style="grid-area:4 / 4 / 8 / 6;" wp-post-class wp-the-id wp-loop="Software" wp-loop-orderby="date" wp-loop-order="DESC" wp-loop-nopaging="true" wp-loop-category-name="software" wp-loop-show-items="1" wp-loop-continue="true">
+                                <img src="https://images.unsplash.com/photo-1518127864129-8d0834d765bc?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&ixid=eyJhcHBfaWQiOjIwOTIyfQ&s=687274d645f07306fb95328c405048c5" cms-post-image="normal">
+                                <a href="" cms-post-link>Link
+                                    <figcaption class="d-flex flex-column justify-content-center align-items-center align-content-center">
+                                        <h3>Read full review</h3>
+                                    </figcaption>
+                                </a>
+                            </figure>
+                        </div>
                     </div>                     
                 </div>                 
             </div>             

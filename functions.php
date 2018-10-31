@@ -90,56 +90,6 @@ function st2_widgets_init() {
     /* Pinegrow generated Register Sidebars Begin */
 
     register_sidebar( array(
-        'name' => __( 'Hero Slider', 'st2' ),
-        'id' => 'hero',
-        'description' => 'Hero slider area. Place two or more widgets here and they will slide!',
-        'before_widget' => '<div class="carousel-item">',
-        'after_widget' => '</div>',
-        'before_title' => ' ',
-        'after_title' => ' '
-    ) );
-
-    register_sidebar( array(
-        'name' => __( 'Hero Canvas', 'st2' ),
-        'id' => 'herocanvas',
-        'description' => 'Full size canvas hero area for Bootstrap and other custom HTML markup',
-        'before_widget' => '',
-        'after_widget' => '',
-        'before_title' => '',
-        'after_title' => ''
-    ) );
-
-    register_sidebar( array(
-        'name' => __( 'Top Full', 'st2' ),
-        'id' => 'statichero',
-        'description' => 'Full top widget with dynamic grid',
-        'before_widget' => '<div id="%1$s" class="static-hero-widget %2$s '. st2_slbd_count_widgets( 'statichero' ) .'">',
-        'after_widget' => '</div><!-- .static-hero-widget -->',
-        'before_title' => '<h3 class="widget-title">',
-        'after_title' => '</h3>'
-    ) );
-
-    register_sidebar( array(
-        'name' => __( 'Left Sidebar', 'st2' ),
-        'id' => 'left-sidebar',
-        'description' => 'Left Sidebar widget area',
-        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-        'after_widget' => '</aside>',
-        'before_title' => '<h3 class="widget-title">',
-        'after_title' => '</h3>'
-    ) );
-
-    register_sidebar( array(
-        'name' => __( 'Right Sidebar', 'st2' ),
-        'id' => 'right-sidebar',
-        'description' => 'Right Sidebar widget area',
-        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-        'after_widget' => '</aside>',
-        'before_title' => '<h3 class="widget-title">',
-        'after_title' => '</h3>'
-    ) );
-
-    register_sidebar( array(
         'name' => __( 'Bottom Full', 'st2' ),
         'id' => 'footerfull',
         'description' => 'Full bottom widget with dynamic grid',
@@ -147,6 +97,24 @@ function st2_widgets_init() {
         'after_widget' => '</div><!-- .footer-widget -->',
         'before_title' => '<h3 class="widget-title">',
         'after_title' => '</h3>'
+    ) );
+
+    register_sidebar( array(
+        'name' => __( 'A1', 'st2' ),
+        'id' => 'a1',
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget' => '</div>',
+        'before_title' => '<h1 class="widgettitle">',
+        'after_title' => '</h1>'
+    ) );
+
+    register_sidebar( array(
+        'name' => __( 'A2', 'st2' ),
+        'id' => 'a2',
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget' => '</div>',
+        'before_title' => '<h1 class="widgettitle">',
+        'after_title' => '</h1>'
     ) );
 
     /* Pinegrow generated Register Sidebars End */
@@ -182,41 +150,6 @@ function st2_customize_register( $wp_customize ) {
     ));
     $pgwp_sanitize = function_exists('pgwp_sanitize_placeholder') ? 'pgwp_sanitize_placeholder' : null;
 
-    $wp_customize->add_setting( 'show_jumbotron', array(
-        'type' => 'theme_mod',
-        'sanitize_callback' => $pgwp_sanitize
-    ));
-
-    $wp_customize->add_control( 'show_jumbotron', array(
-        'label' => __( 'Show Jumbotron', 'st2' ),
-        'description' => __( 'Activate the Jumbotron. Note: It will be visible on ALL the theme templates. If you need a selective display, use the Hero slider or  Hero Canvas widgets and the Widget Logic plugin.', 'st2' ),
-        'type' => 'checkbox',
-        'section' => 'header_settings'
-    ));
-
-    $wp_customize->add_setting( 'jumbotron_bg_color', array(
-        'type' => 'theme_mod',
-        'sanitize_callback' => $pgwp_sanitize
-    ));
-
-    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'jumbotron_bg_color', array(
-        'label' => __( 'Jumbotron Background color', 'st2' ),
-        'type' => 'color',
-        'section' => 'header_settings'
-    ) ) );
-
-    $wp_customize->add_setting( 'jumbotron_bg_image', array(
-        'type' => 'theme_mod',
-        'sanitize_callback' => $pgwp_sanitize
-    ));
-
-    $wp_customize->add_control( new WP_Customize_Media_Control( $wp_customize, 'jumbotron_bg_image', array(
-        'label' => __( 'Jumbotron Background image', 'st2' ),
-        'type' => 'media',
-        'mime_type' => 'image',
-        'section' => 'header_settings'
-    ) ) );
-
     $wp_customize->add_setting( 'jumbotron_heading_color', array(
         'type' => 'theme_mod',
         'sanitize_callback' => $pgwp_sanitize
@@ -228,40 +161,113 @@ function st2_customize_register( $wp_customize ) {
         'section' => 'header_settings'
     ) ) );
 
-    $wp_customize->add_setting( 'jumbotron_text_color', array(
+    $wp_customize->add_setting( 'footer_img3', array(
         'type' => 'theme_mod',
         'sanitize_callback' => $pgwp_sanitize
     ));
 
-    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'jumbotron_text_color', array(
-        'label' => __( 'Jumbotron Paragraph Color', 'st2' ),
-        'type' => 'color',
-        'section' => 'header_settings'
+    $wp_customize->add_control( new WP_Customize_Media_Control( $wp_customize, 'footer_img3', array(
+        'label' => __( 'Payment Icon', 'st2' ),
+        'type' => 'media',
+        'mime_type' => 'image',
+        'section' => 'footer_settings'
     ) ) );
 
-    $wp_customize->add_setting( 'show_left_sidebar', array(
+    $wp_customize->add_setting( 'footer_img4', array(
         'type' => 'theme_mod',
         'sanitize_callback' => $pgwp_sanitize
     ));
 
-    $wp_customize->add_control( 'show_left_sidebar', array(
-        'label' => __( 'Show Left Sidebar', 'st2' ),
-        'description' => __( 'Activate the Left Sidebar', 'st2' ),
-        'type' => 'checkbox',
-        'section' => 'theme_settings'
-    ));
+    $wp_customize->add_control( new WP_Customize_Media_Control( $wp_customize, 'footer_img4', array(
+        'label' => __( 'Payment Icon', 'st2' ),
+        'type' => 'media',
+        'mime_type' => 'image',
+        'section' => 'footer_settings'
+    ) ) );
 
-    $wp_customize->add_setting( 'show_right_sidebar', array(
+    $wp_customize->add_setting( 'footer_img5', array(
         'type' => 'theme_mod',
         'sanitize_callback' => $pgwp_sanitize
     ));
 
-    $wp_customize->add_control( 'show_right_sidebar', array(
-        'label' => __( 'Show Right Sidebar', 'st2' ),
-        'description' => __( 'Activate the Right Sidebar', 'st2' ),
-        'type' => 'checkbox',
-        'section' => 'theme_settings'
+    $wp_customize->add_control( new WP_Customize_Media_Control( $wp_customize, 'footer_img5', array(
+        'label' => __( 'Payment Icon', 'st2' ),
+        'type' => 'media',
+        'mime_type' => 'image',
+        'section' => 'footer_settings'
+    ) ) );
+
+    $wp_customize->add_setting( 'footer_img6', array(
+        'type' => 'theme_mod',
+        'sanitize_callback' => $pgwp_sanitize
     ));
+
+    $wp_customize->add_control( new WP_Customize_Media_Control( $wp_customize, 'footer_img6', array(
+        'label' => __( 'Payment Icon', 'st2' ),
+        'type' => 'media',
+        'mime_type' => 'image',
+        'section' => 'footer_settings'
+    ) ) );
+
+    $wp_customize->add_setting( 'footer_img7', array(
+        'type' => 'theme_mod',
+        'sanitize_callback' => $pgwp_sanitize
+    ));
+
+    $wp_customize->add_control( new WP_Customize_Media_Control( $wp_customize, 'footer_img7', array(
+        'label' => __( 'Payment Icon', 'st2' ),
+        'type' => 'media',
+        'mime_type' => 'image',
+        'section' => 'footer_settings'
+    ) ) );
+
+    $wp_customize->add_setting( 'footer_img8', array(
+        'type' => 'theme_mod',
+        'sanitize_callback' => $pgwp_sanitize
+    ));
+
+    $wp_customize->add_control( new WP_Customize_Media_Control( $wp_customize, 'footer_img8', array(
+        'label' => __( 'Payment Icon', 'st2' ),
+        'type' => 'media',
+        'mime_type' => 'image',
+        'section' => 'footer_settings'
+    ) ) );
+
+    $wp_customize->add_setting( 'footer_text', array(
+        'type' => 'theme_mod',
+        'default' => __( '&nbsp;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pulvinar faucibus neque, nec rhoncus nunc ultrices sit amet. Curabitur ac sagittis neque, vel egestas est', 'st2' ),
+        'sanitize_callback' => $pgwp_sanitize
+    ));
+
+    $wp_customize->add_control( 'footer_text', array(
+        'label' => __( 'Footer Content', 'st2' ),
+        'type' => 'textarea',
+        'section' => 'footer_settings'
+    ));
+
+    $wp_customize->add_setting( 'footer_img', array(
+        'type' => 'theme_mod',
+        'sanitize_callback' => $pgwp_sanitize
+    ));
+
+    $wp_customize->add_control( new WP_Customize_Media_Control( $wp_customize, 'footer_img', array(
+        'label' => __( 'Footer Image2', 'st2' ),
+        'type' => 'media',
+        'mime_type' => 'image',
+        'section' => 'footer_settings'
+    ) ) );
+
+    $wp_customize->add_setting( 'footer_img2', array(
+        'type' => 'theme_mod',
+        'sanitize_callback' => $pgwp_sanitize
+    ));
+
+    $wp_customize->add_control( new WP_Customize_Media_Control( $wp_customize, 'footer_img2', array(
+        'label' => __( 'Footer Image', 'st2' ),
+        'type' => 'media',
+        'mime_type' => 'image',
+        'section' => 'footer_settings'
+    ) ) );
 
     $wp_customize->add_setting( 'footer_text', array(
         'type' => 'theme_mod',
@@ -295,18 +301,47 @@ if ( ! function_exists( 'st2_enqueue_scripts' ) ) :
 
     wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/bootstrap/js/bootstrap.min.js', null, null, true );
 
+    wp_enqueue_script( 'reporter', 'https://scripts.usehawk.com/5b8bc7985f431a00597e787a/reporter.min.js?a=5b8bc7685f431a00597e7875', null, null, true );
+
     /* Pinegrow generated Enqueue Scripts End */
 
         /* Pinegrow generated Enqueue Styles Begin */
 
+    wp_deregister_style( 'style' );
+    wp_enqueue_style( 'style', get_bloginfo('stylesheet_url'), false, null, 'all');
+
     wp_deregister_style( 'bootstrap' );
     wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/bootstrap/css/bootstrap.css', false, null, 'all');
+
+    wp_deregister_style( 'woocommerce' );
+    wp_enqueue_style( 'woocommerce', get_template_directory_uri() . '/css/woocommerce.css', false, null, 'all');
+
+    wp_deregister_style( 'imagehover' );
+    wp_enqueue_style( 'imagehover', 'https://cdnjs.cloudflare.com/ajax/libs/imagehover.css/1.0/css/imagehover.min.css', false, null, 'all');
+
+    wp_deregister_style( 'hovermin' );
+    wp_enqueue_style( 'hovermin', 'https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css', false, null, 'all');
+
+    wp_deregister_style( 'style-1' );
+    wp_enqueue_style( 'style-1', 'https://fonts.googleapis.com/css?family=Abhaya+Libre:400,500,600,700,800', false, null, 'all');
+
+    wp_deregister_style( 'style-2' );
+    wp_enqueue_style( 'style-2', 'https://fonts.googleapis.com/css?family=Anaheim', false, null, 'all');
+
+    wp_deregister_style( 'style-3' );
+    wp_enqueue_style( 'style-3', 'https://fonts.googleapis.com/css?family=Abel', false, null, 'all');
+
+    wp_deregister_style( 'custom' );
+    wp_enqueue_style( 'custom', get_template_directory_uri() . '/custom.css', false, null, 'all');
 
     wp_deregister_style( 'theme' );
     wp_enqueue_style( 'theme', get_template_directory_uri() . '/css/theme.css', false, null, 'all');
 
-    wp_deregister_style( 'woocommerce' );
-    wp_enqueue_style( 'woocommerce', get_template_directory_uri() . '/css/woocommerce.css', false, null, 'all');
+    wp_deregister_style( 'style-4' );
+    wp_enqueue_style( 'style-4', 'https://fonts.googleapis.com/css?family=Roboto', false, null, 'all');
+
+    wp_deregister_style( 'animate' );
+    wp_enqueue_style( 'animate', 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css', false, null, 'all');
 
     /* Pinegrow generated Enqueue Styles End */
 
